@@ -34,6 +34,6 @@
 ***summary:*** find all prime factors of number x
 ***pre:*** passing an integer number (x) and sieveFactoriaze vector (F) 
 ***post:*** return vector of prime factorization of this number
-Time Complexity: O(log X)
+***Time Complexity:*** O(log X)
 
 </p>
