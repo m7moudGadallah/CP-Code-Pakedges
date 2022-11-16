@@ -22,17 +22,14 @@ public:
         Time Complexity: O(sqrt(n))
     */
     static int divisors(int n) {
-        int i = {1}, cnt{0};
+        int cnt{0};
 
-        while (i * i < n) {
+        for (int i = 1; i * i < n; ++i) {
             if (n % i == 0) {
                 cnt += 2;
             }
-            ++i;
 
-            if (i * i == n) {
-                ++cnt;
-            }
+            cnt += (i * i == n);
         }
 
         return cnt;
@@ -48,11 +45,10 @@ public:
     static bool primality(int n) {
         int i{2};
 
-        while (i * i <= n) {
+        for (int i = 2; i * i <= n; ++i) {
             if (n % i == 0) {
                 return false;
             }
-            ++i;
         }
 
         return (n > 1);
@@ -70,19 +66,12 @@ public:
 
         isPrime[0] = isPrime[1] = false;
 
-        int i{2};
-
-        while (i * i <= n) {
+        for (int i = 2; i * i <= n; ++i) {
             if (isPrime[i]) {
-                int k = i * i;
-
-                while (k <= n) {
+                for (int k = i * i; k <= n; k += i) {
                     isPrime[k] = false;
-                    k += i;
                 }
             }
-
-            ++i;
         }
 
         return isPrime;
@@ -102,20 +91,12 @@ public:
 
         mnPrimeFact[0] = mnPrimeFact[1] = -1;
 
-        int i{2};
-
-        while (i * i <= n) {
+        for (int i = 2; i * i <= n; ++i) {
             if (!mnPrimeFact[i]) {
-                int k {i * i};
-
-                while (k <= n) {
+                for (int k = i * i; k <= n; k += i) {
                     mnPrimeFact[k] = i;
-
-                    k += i;
                 }
             }
-
-            ++i;
         }
 
         return mnPrimeFact;
