@@ -29,7 +29,7 @@ public:
                 cnt += 2;
             }
 
-            cnt += (i * i == n);
+            cnt -= (i * i == n);
         }
 
         return cnt;
