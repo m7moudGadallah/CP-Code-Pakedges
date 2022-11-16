@@ -66,18 +66,18 @@ public:
         Time Complexity: O(n * log(log(n)))
     */
     static vector<bool> sieve(int n) {
-        vector<bool> sv(n + 1, true);
+        vector<bool> isPrime(n + 1, true);
 
-        sv[0] = sv[1] = false;
+        isPrime[0] = isPrime[1] = false;
 
         int i{2};
 
         while (i * i <= n) {
-            if (sv[i]) {
+            if (isPrime[i]) {
                 int k = i * i;
 
                 while (k <= n) {
-                    sv[k] = false;
+                    isPrime[k] = false;
                     k += i;
                 }
             }
@@ -85,7 +85,7 @@ public:
             ++i;
         }
 
-        return sv;
+        return isPrime;
     }
 
 
@@ -98,18 +98,18 @@ public:
         Time Complexity: O(n * log(log(n)))
     */
     static vector<int> sieveFactoriaze(int n) {
-        vector<int> sv(n + 1);
+        vector<int> mnPrimeFact(n + 1);
 
-        sv[0] = sv[1] = -1;
+        mnPrimeFact[0] = mnPrimeFact[1] = -1;
 
         int i{2};
 
         while (i * i <= n) {
-            if (!sv[i]) {
+            if (!mnPrimeFact[i]) {
                 int k {i * i};
 
                 while (k <= n) {
-                    sv[k] = i;
+                    mnPrimeFact[k] = i;
 
                     k += i;
                 }
@@ -118,7 +118,7 @@ public:
             ++i;
         }
 
-        return sv;
+        return mnPrimeFact;
     }
 
     /*primeFactorization
