@@ -8,7 +8,7 @@ using namespace std;
     methods:
         - divisors: get number of divisors of number x
         - primality: check if number n is prime or not
-        - seive: find primes using  Sieve of Eratosthenes Algorithm
+        - sieve: find primes using  Sieve of Eratosthenes Algorithm
         - sieveFactoriaze: find primes in range from (1 --> n) using  Sieve of Eratosthenes Algorithm
         - primeFactorization: find all prime factors of number x
 */
