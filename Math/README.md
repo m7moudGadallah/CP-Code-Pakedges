@@ -1,7 +1,7 @@
 <p>
 
 # Primes
-- this class deals with numbers specially primes numbers
+- this [primes](Primes.cpp)class deals with numbers specially primes numbers
 
 ## Methods
 ### divisors
