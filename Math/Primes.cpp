@@ -92,7 +92,9 @@ public:
         for (int i = 2; i * i <= n; ++i) {
             if (!mnPrimeFact[i]) {
                 for (int k = i * i; k <= n; k += i) {
-                    mnPrimeFact[k] = i;
+                    if (!mnPrimeFact[k]) {
+                        mnPrimeFact[k] = i;
+                    }
                 }
             }
         }
